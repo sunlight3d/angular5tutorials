@@ -1,0 +1,44 @@
+<!-- Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+Templates for FormGroup and FormControl
+ -->
+<h2>User Detail</h2>
+<h3>
+  <i>FormBuilder</i>
+</h3>
+<form [formGroup]="userFormGroup" novalidate>
+  <div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name">
+    </label>    
+    <label class="center-block">Email:
+      <input class="form-control" formControlName="email">
+    </label>
+  </div>
+  <div formGroupName="addresses" class="well well-lg">
+    <h4>User's addresses</h4>
+    <div class="form-group">
+      <label class="center-block">Street:
+        <input class="form-control" formControlName="street">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">City:
+        <input class="form-control" formControlName="city">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">State:
+        <select class="form-control" formControlName="state">
+          <option *ngFor="let state of states" [value]="state">{{state}}</option>
+        </select>
+      </label>
+    </div>
+  </div>
+  <p>Form value: {{ userFormGroup.value | json }}</p>
+  <p>Form status: {{ userFormGroup.status | json }}</p>
+  <p>Form untouched: {{ userFormGroup.untouched | json }}</p>
+  <p>Form changed: {{ userFormGroup.dirty | json }}</p>
+  <button type="submit" class="btn btn-success" [disabled]="userFormGroup.status=='INVALID'">Submit</button>
+</form>
