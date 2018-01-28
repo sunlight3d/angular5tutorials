@@ -1,0 +1,14 @@
+<!-- 
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+List of 4 movies
+ -->
+ <h3>Top 4 movies</h3>
+ <div>
+  <a *ngFor="let movie of movies" class="col-1-4">
+    <div class="movie-box">
+      <h4>{{movie.name}}</h4>
+    </div>
+  </a>
+</div>

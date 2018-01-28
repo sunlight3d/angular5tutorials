@@ -1,0 +1,15 @@
+/*
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+CSS for MovieDetail Component
+*/
+.details {  
+    background: mediumseagreen;
+    color: white;
+    padding: 0.5em;
+    margin: 1em;        
+    max-width: 16em;  
+    text-align: left;
+    font-size: 0.875em; /* 14px/16=0.875em */
+  }

@@ -1,0 +1,42 @@
+<!--
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com 
+HTML template for EmployeeFormComponent
+-->
+<div class="container" [hidden]="submitted">
+  <h1>Employee information</h1>
+  <form (ngSubmit)="onSubmit()" #employeeForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" name="name" class="form-control" id="name" required 
+        [(ngModel)]="newEmployee.name" #employeeName="ngModel" #watchState
+      >
+      <br>Current state: {{watchState.className}}
+      <div [hidden]="employeeName.valid || employeeName.pristine" class="alert alert-danger">
+          Name is required(must not blank)
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="dateOfBirth">Date of birth</label>
+      <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth"  required
+        [(ngModel)]="newEmployee.dateOfBirth" #dob="ngModel">
+        <div [hidden]="dob.valid || dob.pristine" class="alert alert-danger">
+            Date of birth is required(must not blank)
+        </div>
+    </div>
+    <div class="form-group">
+      <label for="alias">Alias</label>
+      <input type="text" class="form-control" id="alias">
+    </div>
+    <div class="form-group">
+      <label for="jobCategory">Job's category</label>
+      <select class="form-control" id="jobCategory" required>
+        <option *ngFor="let eachJobCategory of jobCategories" [value]="eachJobCategory">{{eachJobCategory}}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-default" (click)="addNewEmployee(); employeeForm.reset()">New Employee</button>
+    <button type="submit" class="btn btn-success" [disabled]="!employeeForm.form.valid">Submit</button>
+  </form>
+</div>
+<h2 [hidden]="!submitted">Submit done !</h2>

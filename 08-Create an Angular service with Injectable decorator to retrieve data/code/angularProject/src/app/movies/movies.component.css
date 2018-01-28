@@ -1,0 +1,29 @@
+/*
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+CSS for Movies Component
+*/
+.parent {
+  display: flex;
+}
+.selected {
+  background: mediumseagreen !important;
+  color: white;
+}
+
+.movies {
+  background: #3399ff;  
+  padding: 0.5em 1em 0.5em 1.5em;
+  margin: 1em;        
+  max-width: 16em;
+}
+.movies .movieListItem 
+{
+  font-size: 0.875em; /* 14px/16=0.875em */
+  font-family: Georgia, Serif;
+  background: #cce5ff;
+  padding: 0.3em;
+  margin: 0.2em;
+  text-align: left;
+}

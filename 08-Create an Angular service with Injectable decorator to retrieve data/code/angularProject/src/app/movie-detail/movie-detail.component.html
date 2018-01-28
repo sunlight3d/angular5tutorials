@@ -1,0 +1,19 @@
+<!-- 
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+HTML template for "movie's details" component
+-->
+<div *ngIf="movie" class="details">
+    <h3>You selected: {{selectedMovie.name}}. Details:</h3>
+    <table style="width: 100%">            
+        <tr>
+            <td>name:</td>
+            <td><input [(ngModel)]="movie.name" placeholder="name"></td> 
+        </tr>
+        <tr>
+            <td>release year: </td>
+            <input [(ngModel)]="movie.releaseYear" placeholder="release year">    
+        </tr>
+    </table>  
+</div>

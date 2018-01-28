@@ -1,0 +1,18 @@
+<!-- 
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+Search movie by typing in <input> tag
+-->
+<div id="movies">
+  <h4>Movie search</h4> 
+  <input #searchBox (keyup)="search(searchBox.value)" /> 
+  <ul class="movies">
+    <li *ngFor="let movie of movies$ | async" class="movieListItem">
+      <a routerLink="/detail/{{movie.id}}">
+        {{movie.name}}
+      </a>
+    </li>
+  </ul>
+</div>
+

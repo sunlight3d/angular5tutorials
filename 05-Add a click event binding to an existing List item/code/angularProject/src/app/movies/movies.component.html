@@ -1,0 +1,16 @@
+<!-- 
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+HTML template for "movies" component
+-->
+<h2>My favorite movies</h2>
+<ol class="movies">
+    <li class= "movieListItem" 
+        *ngFor="let eachMovie of movies"
+        [class.selected]="eachMovie === selectedMovie"
+        (click)="onSelect(eachMovie)"
+        >
+         {{eachMovie.name}} - {{eachMovie.releaseYear}}
+    </li>
+</ol>

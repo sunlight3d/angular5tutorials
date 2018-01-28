@@ -1,0 +1,38 @@
+<!-- 
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+HTML template for "movies" component
+-->
+<h2>My favorite movies</h2>
+<div style="text-align: left;">
+    <table style="width: 300px">
+        <tr>
+            <td>New movie's name:</td>
+            <td>
+                <input #movieName placeholder="name">
+            </td>
+        </tr>
+        <tr>
+            <td>release year: </td>
+            <input #releaseYear placeholder="release year">
+        </tr>
+        <tr>
+            <button (click)="add(movieName.value, releaseYear.value); movieName.value=''; releaseYear.value=''">
+                add
+            </button>
+        </tr>
+    </table>
+</div>
+<div class="parent">
+    <ol class="movies">
+        <li class="movieListItem" *ngFor="let eachMovie of movies">
+            <a routerLink="/detail/{{eachMovie.id}}" style="text-decoration: none;">
+                {{eachMovie.name}} - {{eachMovie.releaseYear}}
+            </a>
+            <button title="delete movie"
+            (click)="delete(eachMovie.id)">x</button>
+        </li>
+    </ol>
+    <!-- <app-movie-detail [movie]="selectedMovie"></app-movie-detail> -->
+</div>

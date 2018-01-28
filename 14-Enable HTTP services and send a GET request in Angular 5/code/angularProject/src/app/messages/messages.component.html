@@ -1,0 +1,12 @@
+<!--
+Mr Nguyen Duc Hoang
+https://www.youtube.com/c/nguyenduchoang
+Email: sunlight4d@gmail.com
+Show messages and button to "delete all messages"
+-->
+<div *ngIf="messageService.messages.length" style="text-align:left;">  
+  <h4>Messages</h4>
+  <button class="clear"
+          (click)="messageService.deleteAllMessages()">Delete all messages</button>
+  <div *ngFor='let message of messageService.messages'> {{message}}</div>
+</div>
